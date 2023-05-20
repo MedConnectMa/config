@@ -15,8 +15,8 @@ jobs:
     - name: Setup SSH
       uses: MrSquaare/ssh-setup-action@v2
       with:
-        host: contractml.com
+        host: medconnect-ma.online
         private-key: ${{ secrets.SSH_KEY }}
   
-    - name: Copy docker-compose files to EC2
+    - name: Update docker-compose
       run: scp docker-compose.yml root@medconnect-ma.online:~/app
