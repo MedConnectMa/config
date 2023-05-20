@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  db:
+    image: mariadb:10.11
+    container_name: medconnect-db
+    environment:
+      MARIADB_ROOT_PASSWORD:   ${DB_ROOT_PASS}
+      MARIADB_DATABASE:        ${DB_NAME}
+      MARIADB_USER:            ${DB_USER}
+      MARIADB_PASSWORD:        ${DB_PASS}
