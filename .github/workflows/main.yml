@@ -1,0 +1,23 @@
+name: Update docker-compose
+
+on:
+  push:
+    branches:
+      - main
+  
+jobs:
+  config:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup SSH
+      uses: MrSquaare/ssh-setup-action@v2
+      with:
+        host: contractml.com
+        private-key: ${{ secrets.SSH_KEY }}
+  
+    - name: Copy docker-compose files to EC2
+      run: |
+        scp docker-compose.yml root@medconnect-ma.online:~/app
