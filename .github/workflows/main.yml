@@ -22,4 +22,4 @@ jobs:
       run: scp docker-compose.yml root@medconnect-ma.online:~/app
 
     - name: Copy .env.example
-      run: scp .env.example
+      run: scp .env.example root@medconnect-ma.online:~/app
