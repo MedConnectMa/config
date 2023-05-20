@@ -8,3 +8,6 @@ services:
       MARIADB_DATABASE:        ${DB_NAME}
       MARIADB_USER:            ${DB_USER}
       MARIADB_PASSWORD:        ${DB_PASS}
+
+  api-gateway:
+    image: ghcr.io/medconnectma/api-gateway:latest
