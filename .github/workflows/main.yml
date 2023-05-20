@@ -19,5 +19,4 @@ jobs:
         private-key: ${{ secrets.SSH_KEY }}
   
     - name: Copy docker-compose files to EC2
-      run: |
-        scp docker-compose.yml root@medconnect-ma.online:~/app
+      run: scp docker-compose.yml root@medconnect-ma.online:~/app
